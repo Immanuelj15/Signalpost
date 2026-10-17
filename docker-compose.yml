@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: signalpost-api
+    command: python -m signalpost.cli serve --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DATABASE_PATH=data/signalpost.db
+      - USER_AGENT=Signalpost-Research-Agent/1.0
+      - LOG_LEVEL=INFO
+
+  dashboard:
+    build: .
+    container_name: signalpost-dashboard
+    command: streamlit run src/signalpost/ui.py --server.port 8501 --server.address 0.0.0.0
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DATABASE_PATH=data/signalpost.db
+      - USER_AGENT=Signalpost-Research-Agent/1.0
+    depends_on:
+      - api

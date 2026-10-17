@@ -1,0 +1,11 @@
+organisasjonsnummer,notes
+923609016,Equinor ASA (Active ASA with annual accounts)
+984851006,DNB Bank ASA (Active major bank)
+915000578,Posten Bring AS (Logistics & postal services)
+998848316,Telenor ASA (Telecommunications)
+986228608,Yara International ASA (Chemicals & fertilizers)
+916462702,Kongsberg Gruppen ASA (Technology & maritime)
+974760673,Brønnøysundregistrene (Public registry organization)
+958935420,Oslo Kommune (Municipal authority)
+123456789,Invalid Checksum Test Entity (Must return structured failure)
+923609016,Equinor ASA Duplicate (Must test deduplication & order preservation)
